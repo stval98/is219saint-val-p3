@@ -41,6 +41,15 @@ const vue_app = new Vue({
       },
       methods: {
             /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
+			posterClick: function(index) {
+				let count = 0; 
+				if (this.movies[index].posterindex < (this.movies[index].posters.length - 1)){
+					this.movies[index].posterindex += 1;
+				}
+				else{
+					this.movies[index].posterindex = 0;
+				}
+			}
       }
 })
 	

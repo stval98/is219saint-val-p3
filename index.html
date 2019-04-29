@@ -36,12 +36,12 @@
 
 	    <div class="main">
 
-	      <div class="container" v-for="movie in movies">
+	      <div class="container" v-for="(movie, index) in movies"  :key="index">
 
 	        <div class="col-md-6"> 
 	            <div class="thumbnail">
 					<!-- STEP 5: FIX BINDING TO DISPLAY EACH MOVIE'S INFO-->
-					<img class="poster"  v-bind:src="movie.posters[movie.posterindex]" @click="movie.posterindex +=1" v-if="movie.posterindex <= movie.posters.length"/>
+					<img class="poster"  v-bind:src="movie.posters[movie.posterindex]" @click="posterClick(index)"/>
 					<div class="imageInfo">{{ movie.posterindex }}</div>
 						
 						<p class="title">{{ movie.title }} {{ movie.country }}</p> 
@@ -62,9 +62,9 @@
 
 	    <div class="footer">
 	      <div class="container">
-			<a id="github" class="btn btn-lg btn-warning">
+			<a id="github" class="btn btn-lg btn-warning" v-bind:href="github">
 				<!-- STEP 4: FIX SYNTAX FOR DATA-BINIDINGS -->
-				<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i>{{ owner }} {{ github }}
+				<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i>{{ owner }}'s Github
 	  		</a>
 	      </div>
 	    </div>
