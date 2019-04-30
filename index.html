@@ -39,7 +39,7 @@
 		<!-- STEP 6: CREATE LOOP TO DISPLAY ALL MOVIES -->
 	      <div class="container" v-for="(movie, index) in movies"  :key="index">
 
-	        <div class="col-md-6"> 
+	        <div class="col-md-5"> 
 	            <div class="thumbnail">
 					<!-- STEP 5: FIX BINDING TO DISPLAY EACH MOVIE'S INFO-->
 					<img class="poster"  v-bind:src="movie.posters[movie.posterindex]" @click="posterClick(index)"/>

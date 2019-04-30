@@ -8,6 +8,12 @@ body {
     background-image: url(img/geometry.jpg);
 }
 
+.main{
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+}
+
 /* This stylizes the header area */
 .header {
     padding: 15px;
