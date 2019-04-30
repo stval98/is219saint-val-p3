@@ -14,6 +14,7 @@
 
 
 	<!-- DO NOT CHANGE ANYTHING ABOVE THIS LINE-->
+	
 	<!-- STEP 1: INCLUDE VUE.JS -->
 	<!-- Javascript Framework (e.g., vue.js) (ADD HERE) -->
 	<script src="https://vuejs.org/js/vue.js"></script>
@@ -35,7 +36,7 @@
 
 
 	    <div class="main">
-
+		<!-- STEP 6: CREATE LOOP TO DISPLAY ALL MOVIES -->
 	      <div class="container" v-for="(movie, index) in movies"  :key="index">
 
 	        <div class="col-md-6"> 
@@ -46,13 +47,13 @@
 						
 						<p class="title">{{ movie.title }} {{ movie.country }}</p> 
 						<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{ movie.iscore }} </p>
-						<p class="runtime">Runtime: {{ movie.runtime }}</p> 
-						<p class="released">Released: {{ movie.released }} | Rated: {{ movie.rating }}</p>
+						<p class="runtime" v-bind:value="movie.runtime"> Runtime: {{ timeText(movie.runtime) }}</p> 
+						<p class="released" v-bind:value="movie.released[index]">Released: {{ makeTextDate(movie.released) }} | Rated: {{ movie.rating }}</p>
 						<p class="websites">Websites: <a>{{ movie.imdb }}</a> | <a>{{ movie.website }}</a></p>
 						
 			            <div class="social">
-			              <p class="likes" @click="movie.likes += 1"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{ movie.likes }}</p>
-			              <p class="dislikes" @click="movie.dislikes += 1"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{ movie.dislikes }}</p>
+			              <p class="likes" v-bind:src="movie.likes" @click="like(index)"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{ movie.likes }}</p>
+			              <p class="dislikes" v-bind:src="movie.dislikes" @click="dislike(index)"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{ movie.dislikes }}</p>
 			            </div>
 	            </div> 
 	        </div>
@@ -62,8 +63,8 @@
 
 	    <div class="footer">
 	      <div class="container">
+			<!-- STEP 4: FIX SYNTAX FOR DATA-BINIDINGS -->
 			<a id="github" class="btn btn-lg btn-warning" v-bind:href="github">
-				<!-- STEP 4: FIX SYNTAX FOR DATA-BINIDINGS -->
 				<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i>{{ owner }}'s Github
 	  		</a>
 	      </div>

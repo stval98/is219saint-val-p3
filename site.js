@@ -42,13 +42,64 @@ const vue_app = new Vue({
       methods: {
             /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
 			posterClick: function(index) {
-				let count = 0; 
 				if (this.movies[index].posterindex < (this.movies[index].posters.length - 1)){
 					this.movies[index].posterindex += 1;
 				}
 				else{
 					this.movies[index].posterindex = 0;
 				}
+			},
+			makeTextDate: function(dateArray){
+				let year = dateArray[0];
+				let day = dateArray[2];
+				let month = dateArray[1];
+				switch(month){
+					case 1:
+						month = 'January';
+						break;
+					case 2:
+						month = 'February';
+						break;
+					case 3:
+						month = 'March';
+						break;
+					case 4:
+						month = 'April';
+						break;
+					case 5:
+						month = 'May';
+						break;
+					case 6:
+						month = 'June';
+						break;
+					case 7:
+						month = 'July';
+						break;
+					case 8:
+						month = 'August';
+						break;
+					case 9:
+						month = 'September';
+						break;
+					case 10:
+						month = 'October';
+						break;
+					case 11:
+						month = 'November';
+						break;
+					case 12:
+						month = 'December';
+				}
+				return ''.concat(month, ' ', day, ', ', year);
+			},
+			like: function(index){
+				this.movies[index].likes += 1;
+			},
+			dislike: function(index){
+				this.movies[index].dislikes += 1;
+			},
+			timeText: function(minutes){
+				return Math.floor(minutes / 60) + 'h ' + minutes % 60 + 'm';
 			}
       }
 })
