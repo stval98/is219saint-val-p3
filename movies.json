@@ -68,5 +68,47 @@
             "likes": 812,
             "dislikes": 101,
             "posterindex": 0
+      },
+	  {
+            "title": "Pan's Labyrinth",
+            "iscore": 8.2,
+            "rating": "R",
+            "runtime": 118,
+            "released": [2007, 1, 19],
+            "country": "MEX",
+            "posters": ["img/panslabyrinth.jpg", "img/panslabyrinth2.jpg", "img/panslabyrinth3.jpg"],
+            "imdb": "https://www.imdb.com/title/tt0457430/?ref_=nv_sr_1?ref_=nv_sr_1",
+            "website": "https://en.wikipedia.org/wiki/Pan%27s_Labyrinth",
+            "likes": 552,
+            "dislikes": 23,
+            "posterindex": 0
+      },
+	  {
+            "title": "Rosemary's Baby",
+            "iscore": 8.0,
+            "rating": "R",
+            "runtime": 137,
+            "released": [1968, 10, 17],
+            "country": "USA",
+            "posters": ["img/rosemary.jpg", "img/rosemary2.jpg", "img/rosemary3.jpg"],
+            "imdb": "https://www.imdb.com/title/tt0063522/?ref_=nv_sr_1?ref_=nv_sr_1",
+            "website": "https://en.wikipedia.org/wiki/Rosemary%27s_Baby_(film)",
+            "likes": 1850,
+            "dislikes": 466,
+            "posterindex": 0
+      },
+	  {
+            "title": "Alien",
+            "iscore": 8.5,
+            "rating": "R",
+            "runtime": 117,
+            "released": [1979, 6, 22],
+            "country": "USA",
+            "posters": ["img/alien.jpg", "img/alien2.jpg"],
+            "imdb": "https://www.imdb.com/title/tt0078748/?ref_=nv_sr_2?ref_=nv_sr_2",
+            "website": "https://www.facebook.com/alienanthology/",
+            "likes": 222,
+            "dislikes": 0,
+            "posterindex": 0
       }
 ]
