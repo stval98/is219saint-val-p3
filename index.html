@@ -43,13 +43,13 @@
 	            <div class="thumbnail">
 					<!-- STEP 5: FIX BINDING TO DISPLAY EACH MOVIE'S INFO-->
 					<img class="poster"  v-bind:src="movie.posters[movie.posterindex]" @click="posterClick(index)"/>
-					<div class="imageInfo" v-model.number="movie.posterindex"> {{ movie.posterindex + 1 }} of {{ movies[index].posters.length }}</div>
+					<div class="imageInfo" v-model.number="movie.posterindex">Poster {{ movie.posterindex + 1 }} of {{ movies[index].posters.length }}</div>
 						
 						<p class="title">{{ movie.title }} {{ movie.country }}</p> 
 						<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{ movie.iscore }} </p>
 						<p class="runtime" v-bind:value="movie.runtime"> Runtime: {{ timeText(movie.runtime) }}</p> 
 						<p class="released" v-bind:value="movie.released[index]">Released: {{ makeTextDate(movie.released) }} | Rated: {{ movie.rating }}</p>
-						<p class="websites">Websites: <a>{{ movie.imdb }}</a> | <a>{{ movie.website }}</a></p>
+						<p class="websites">Websites: <a v-bind:href="movie.imdb">IMDB</a> | <a v-bind:href="movie.website">Official</a></p>
 						
 			            <div class="social">
 			              <p class="likes" v-bind:src="movie.likes" @click="like(index)"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{ movie.likes }}</p>
